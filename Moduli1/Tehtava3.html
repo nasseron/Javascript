@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum, Product, and Average</title>
+    <script>
+        function calculate() {
+
+          var num1 = parseInt(prompt("Enter the first integare: "));
+          var num2 = parseInt(prompt("Enter the second integare: "));
+          var num3 = parseInt(prompt("Enter the third integare: "));
+          var Sum = num1 + num2 + num3;
+          var Product = num1 * num2 * num3;
+          var Average = Sum / 3;
+          document.getElementById("Sum").innerHTML = "Sum: " + Sum;
+          document.getElementById("Product").innerHTML = "Product: " + Product;
+          document.getElementById("Average").innerHTML = "Average: " + Average.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Three Integers</h1>
+    <button onclick = "calculate()">Calculate Sum, Product, and Average</button>
+
+    <h2>Result:</h2>
+    <p id="Sum"></p>
+    <p id="Product"></p>
+    <p id="Average"></p>
+
+
+</body>
+</html>

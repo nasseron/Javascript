@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <title>Dice Rool Summ</title>
+    <script>
+      function rollDice() {
+        var numDice = parseInt(document.getElementById("numDice").value);
+        var totalSum = 0;
+        for (var i = 0; i < numDice; i++) {
+          var roll = Math.floor(Math.random() * 6 ) + 1;
+          totalSum += roll;
+        }
+        document.getElementById("result").innerText = "The sum of the dice rolls is: " + totalSum;
+      }
+    </script>
+</head>
+<body>
+  <h1>Dice Roll Sum</h1>
+  <label for="numDice">Enter the number of dice rolls: </label>
+  <input type="number" id="numDice" min="1">
+  <button onclick="rollDice()">Roll Dice</button>
+  <p id="result">u7</p>
+
+</body>
+</html>

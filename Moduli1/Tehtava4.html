@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sorting Hat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: cyan;
+            padding: 20px;
+        }
+        input {
+            padding: 5px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .house-room {
+            padding: 20px;
+            color: aquamarine;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slytherin {background-color: bisque; }
+        .hufflepuff {background-color: chocolate}
+        .ravenclaw { background-color: darkgoldenrod}
+    </style>
+</head>
+<body>
+
+    <h1>The Sorting Hat</h1>
+    <label for="studentName">Enter your name:</label>
+    <input type="text" id="studentName" placeholder="Enter your name">
+    <button onclick="sortStudent()">Sort Me!</button>
+
+    <div id="sortingResult"></div>
+    <div id="houswRoom"></div>
+    <script>
+        function sortStudent() {
+            const name = document.getElementById('studentName').value.trim();
+            if (name === '') {
+                alert("Please enter your name!");
+                return;
+            }
+            const houses = ['Slytherin', 'Hufflepuff', 'Ravenclaw'];
+            const selectedHouse = houses[Math.floor(Math.random() * houses.length)];
+            const resultText = `${name}, you are in ${selectedHouse}!`;
+            document.getElementById('sortingResult').innerHTML = resultText;
+            const roomDiv = document.getElementById('houswRoom');
+            roomDiv.style.display = 'block';
+            roomDiv.className = '';
+            if (selectedHouse === 'Slythrin') {
+                roomDiv.classList.add('house-room', 'slytherin');
+                roomDiv.innerText = "Welcom to the Slytherin Common Room!";
+
+            } else if (selectedHouse === 'Hufflepuff') {
+                roomDiv.classList.add('Hous-room', 'Hufflepuff');
+                roomDiv.innerText = "Welcome to the Hufflepuff Common Room!";
+
+            } else if (selectedHouse === 'Ravenclaw') {
+                roomDiv.classList.add('house-room', 'ravenclaw');
+                roomDiv.innerText = ("Welcome to the Ravenclaw Common Room!")
+            }
+
+        }
+
+    </script>
+</body>
+</html>
