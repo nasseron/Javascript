@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Names</title>
+</head>
+<body>
+    <h1>Enter the names of 6 dogs</h1>
+
+    <script>
+        // Ask for the names of six dogs and store them in an array
+        let dogNames = [];
+        for (let i = 0; i < 6; i++) {
+            let dogName = prompt(`Enter the name of dog ${i + 1}:`);
+            dogNames.push(dogName);
+        }
+
+        // Sort the dog names in reverse alphabetical order
+        dogNames.sort().reverse();
+
+        // Create an unordered list and add dog names to it
+        let ul = document.createElement('ul');
+        dogNames.forEach(name => {
+            let li = document.createElement('li');
+            li.textContent = name;
+            ul.appendChild(li);
+        });
+
+        // Append the unordered list to the body of the webpage
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>
